@@ -1,0 +1,1 @@
+  a[j+1]=current;
