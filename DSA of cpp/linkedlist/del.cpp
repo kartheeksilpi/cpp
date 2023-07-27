@@ -66,5 +66,6 @@ int main(){
     display(head);
     delet(head,2);
     display(head);
+    return 0;
 
 }
