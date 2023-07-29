@@ -5,7 +5,8 @@ string rev(string s,int i){
     else{
         string temp = rev(s,(i+1));
         return temp + s[i]; 
-}}
+    }
+}
 int main(){
     string s="kartheek";
     cout<<rev(s,0)<<endl; // Output: kehtrekark
