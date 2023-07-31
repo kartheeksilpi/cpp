@@ -5,8 +5,7 @@ int fib(int n){
     return fib(n-2)+fib(n-1);
 }
 int main(){
-    int n=5;
-    int ans=fib(n);
-    cout<<ans<<endl;
+    int n=6;
+    cout<<fib(n)<<endl;
 return 0;
 }
