@@ -38,7 +38,20 @@ int len(node* &head){
     }
     return count;
 }
-int intersection(node* &head1,node* &head2){
+void intersect(node* &head1,node*&head2,int pos){
+    node* temp1=head1;
+    node* temp2=head2;
+    while(pos!=1){
+        temp1=temp1->next;
+        pos--;
+    }
+    while(temp2->next!=NULL){
+        temp2=temp2->next;
+    }
+    temp2->next=temp1;
+    return;
+}
+int intersection_find(node* &head1,node* &head2){
      int l;
      node* ptr1;
      node* ptr2;
@@ -54,12 +67,12 @@ int intersection(node* &head1,node* &head2){
     }
     while(l){
         ptr1=ptr1->next;
+        if(ptr1==NULL)return -1;
         l--;
     }
-    int count=1;
     while(ptr1!=NULL && ptr2!=NULL){
         if(ptr1==ptr2){
-            return count;
+            return ptr1->data;
         }
         ptr1=ptr1->next;
         ptr2=ptr2->next;
@@ -84,6 +97,9 @@ int main(){
     }
     display(head1);
     display(head2);
-    cout<<intersection(head1,head2)<<endl;
+    intersect(head1,head2,4);
+    display(head1);
+    display(head2);
+    cout<<intersection_find(head1,head2)<<endl;
 return 0;
 }
